@@ -1,14 +1,14 @@
-var totalScore = 0;
+var score = 0;
 //Print score
-$("#score").append(totalScore);
+$("#score").append(score);
 
 var wins = 0;
-//Print score
-$("#win-counter").append(totalScore);
+//Print wins
+$("#win-counter").append(wins);
 
 var losses = 0;
-//Print score
-$("#loss-counter").append(totalScore);
+//Print losses
+$("#loss-counter").append(losses);
 
 //Generate a random number at the start of the game between 19 and 120
 function generate() {
@@ -19,18 +19,14 @@ function generate() {
 //Print random number
 $("#random").append(generate());
 
+//Each crystal should have a random hidden value between 1 - 12.
+var emerald = Math.floor(Math.random() * 12) + 1;
+var turquoise = Math.floor(Math.random() * 12) + 1;
+var diamond = Math.floor(Math.random() * 12) + 1;
+var amethyst = Math.floor(Math.random() * 12) + 1;
 
 //When the player clicks on a crystal, it will add a specific amount of points to the player's total score.
-
 $("#emerald").on("click", function() {
-    // Create a string which will hold the lottery number
-    var crystal = 1 + Math.floor(Math.random() * 12);
-    console.log(crystal);
-
-    // ... and then dump the random number into our random-number div.  $("#random-number").prepend("<br><hr>" + lottoNumber);
-
+    score += emerald;
+    $("#score").text("Score: " + emerald);
   });
-
-
-
-//Each crystal should have a random hidden value between 1 - 12.
